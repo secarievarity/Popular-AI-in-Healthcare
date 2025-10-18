@@ -1,4 +1,3 @@
-# Popular-AI-in-Healthcare
 <!DOCTYPE html>
 <html lang="en">
 <head>
