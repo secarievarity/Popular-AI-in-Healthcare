@@ -1,7 +1,7 @@
 # 🩺 Team-Based UAS Project: ML-Heart-Disease-Prediction
 
 DEMO MODEL
-<!-- Uploading "Demo Prediksi Penyakit Jantung.gif"... -->
+![Image](https://github.com/user-attachments/assets/7173f5e8-f111-4f5b-8a70-d2f97f56f83c)
 
 ## 1. Pendahuluan
 Proyek ini bertujuan untuk membangun model Machine Learning (ML) yang mampu memprediksi risiko seseorang menderita penyakit jantung (Target: 1) berdasarkan data klinis multi-parameter (Target: 0). Proyek ini sepenuhnya diimplementasikan melalui alur kerja Git/GitHub yang terstruktur.
@@ -45,6 +45,7 @@ Untuk menunjukkan model yang dapat dijalankan, kami membuat aplikasi web sederha
 
 ## 4. Dependencies (`requirements.txt`)
 Daftar library Python yang diperlukan untuk menjalankan proyek:
+
 
 
 
