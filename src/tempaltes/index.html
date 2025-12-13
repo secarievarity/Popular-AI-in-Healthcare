@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediksi Penyakit Jantung</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; background-color: #e9eef7; display: flex; justify-content: center; align-items: center; min-height: 100vh; }
+        .container { max-width: 600px; width: 90%; background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #0056b3; text-align: center; margin-bottom: 20px; }
+        label { display: block; margin-top: 15px; font-weight: 600; color: #333; }
+        input[type="number"], select { width: 100%; padding: 10px; margin-top: 8px; border: 1px solid #ced4da; border-radius: 6px; box-sizing: border-box; }
+        input[type="submit"] { background-color: #28a745; color: white; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; width: 100%; font-size: 16px; margin-top: 25px; transition: background-color 0.3s; }
+        input[type="submit"]:hover { background-color: #218838; }
+        .result { margin-top: 30px; padding: 20px; border-radius: 8px; text-align: center; font-size: 1.1em; }
+        .result.high { background-color: #ffe0e6; color: #a3002f; border: 1px solid #ffb3c1; }
+        .result.low { background-color: #e6ffed; color: #0a753a; border: 1px solid #b3ffc9; }
+        .disclaimer { text-align: center; margin-top: 15px; font-size: 0.8em; color: #6c757d; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🩺 Heart Disease Prediction</h1>
+        <p style="text-align: center;">Masukkan 6 parameter klinis pasien.</p>
+
+        <form method="POST">
+
+            <label for="age">1. Usia (Tahun):</label>
+            <input type="number" id="age" name="age" required>
+
+            <label for="sex">2. Jenis Kelamin:</label>
+            <select id="sex" name="sex">
+                <option value="1">1 (Laki-laki)</option>
+                <option value="0">0 (Perempuan)</option>
+            </select>
+
+            <label for="trestbps">3. Tekanan Darah Istirahat (mmHg):</label>
+            <input type="number" id="trestbps" name="trestbps" required>
+
+            <label for="chol">4. Kolesterol (mg/dl):</label>
+            <input type="number" id="chol" name="chol" required>
+
+            <label for="weight">5. Berat Badan (kg):</label>
+            <input type="number" id="weight" name="weight" step="0.1" required>
+
+            <label for="height">6. Tinggi Badan (cm):</label>
+            <input type="number" id="height" name="height" step="0.1" required>
+
+            <input type="submit" value="Prediksi Risiko">
+        </form>
+
+        {% if prediction %}
+        <div class="result {% if 'Tinggi' in prediction %}high{% else %}low{% endif %}">
+            <h3>Hasil Prediksi Model:</h3>
+            <p style="font-weight: bold;">{{ prediction }}</p>
+        </div>
+        {% endif %}
+
+        <p class="disclaimer">Proyek UAS Kelompok Healthcare. Hasil ini adalah prediksi ML dan bukan diagnosis medis.</p>
+    </div>
+</body>
+</html>
